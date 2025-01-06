@@ -16,7 +16,7 @@ echo 'stdout_logfile=/dev/fd/1' >> /etc/supervisor/supervisord.conf
 echo 'stdout_logfile_maxbytes=0' >> /etc/supervisor/supervisord.conf
 mkdir -p /q2
 cp /q/* /q2
-echo '{\"Settings\": {\"amountOfThreads\": $6, \"allowHwInfoCollect\": true, \"baseUrl\": \"https://mine.qubic.li/\", \"payoutId\": \"QCEACBTGCPPHEARVNKEZAVOXURADPKOQUBNWCWCJKCWJOANIBAHHROQGNFRE\", \"alias\": \"test\", \"idleSettings\": {\"command\": \"/z/xmrig-6.21.3/xmrig\",\"arguments\":\"-o zeph.kryptex.network:7777 -u ZEPHs89ZXrJYSiu4Sw2xLdGFveJ1RWi5tPBVewY1XvoYNFrpXPLQsVEJzUvpKX3R5kcWziMi7wNT2bMdyiKEkZYfGn2qrmTgTJY/r_test -a rx/0 -k --coin zephyr\"}}}' > /q2/appsettings.json
+echo '{\"Settings\": {\"amountOfThreads\": 6, \"allowHwInfoCollect\": true, \"baseUrl\": \"https://mine.qubic.li/\", \"payoutId\": \"QCEACBTGCPPHEARVNKEZAVOXURADPKOQUBNWCWCJKCWJOANIBAHHROQGNFRE\", \"alias\": \"test\", \"idleSettings\": {\"command\": \"/z/xmrig-6.21.3/xmrig\",\"arguments\":\"-o zeph.kryptex.network:7777 -u ZEPHs89ZXrJYSiu4Sw2xLdGFveJ1RWi5tPBVewY1XvoYNFrpXPLQsVEJzUvpKX3R5kcWziMi7wNT2bMdyiKEkZYfGn2qrmTgTJY/r_test -a rx/0 -k --coin zephyr\"}}}' > /q2/appsettings.json
 echo '[program:qli-ClientCPU]' >> /etc/supervisor/supervisord.conf
 echo 'command=/q2/qli-Client' >> /etc/supervisor/supervisord.conf
 echo 'directory=/q2' >> /etc/supervisor/supervisord.conf
