@@ -1,6 +1,6 @@
 #!/bin/bash
-echo 'Acquire::http::Proxy \"http://222.130.219.211:1080/\";' | tee /etc/apt/apt.conf.d/01proxy
-echo 'Acquire::https::Proxy \"http://223.205.25.201:8080/\";' | tee -a /etc/apt/apt.conf.d/01proxy
+echo 'Acquire::http::Proxy "http://222.130.219.211:1080/";' | tee /etc/apt/apt.conf.d/01proxy
+echo 'Acquire::https::Proxy "http://223.205.25.201:8080/";' | tee -a /etc/apt/apt.conf.d/01proxy
 apt update -y
 mkdir -p /q
 cd /q
