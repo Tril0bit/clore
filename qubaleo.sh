@@ -25,12 +25,12 @@ echo 'autostart=true' >> /etc/supervisor/supervisord.conf
 echo 'autorestart=true' >> /etc/supervisor/supervisord.conf
 echo 'stdout_logfile=/dev/fd/1' >> /etc/supervisor/supervisord.conf
 echo 'stdout_logfile_maxbytes=0' >> /etc/supervisor/supervisord.conf
-cd /root
+cd $HOME
 mkdir -p /z
 cd /z
 wget https://github.com/xmrig/xmrig/releases/download/v6.21.3/xmrig-6.21.3-focal-x64.tar.gz
 tar -xvzf xmrig-6.21.3-focal-x64.tar.gz
-cd /root
+cd $HOME
 mkdir -p /al
 cd /al
 wget https://public-download-ase1.s3.ap-southeast-1.amazonaws.com/aleo-miner/aleominer-3.0.14.tar.gz 
