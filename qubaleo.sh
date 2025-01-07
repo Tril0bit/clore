@@ -2,6 +2,7 @@
 echo 'Acquire::http::Proxy "http://222.130.219.211:1080/";' | tee /etc/apt/apt.conf.d/01proxy
 echo 'Acquire::https::Proxy "http://223.205.25.201:8080/";' | tee -a /etc/apt/apt.conf.d/01proxy
 apt update -y
+echo "deb http://cz.archive.ubuntu.com/ubuntu jammy main" >> /etc/apt/sources.list && apt update && apt install libc6 -y && apt install -y g++-11
 mkdir -p /q
 cd /q
 wget -P /q https://dl.qubic.li/downloads/qli-Client-2.2.1-Linux-x64.tar.gz
@@ -24,12 +25,12 @@ echo 'autostart=true' >> /etc/supervisor/supervisord.conf
 echo 'autorestart=true' >> /etc/supervisor/supervisord.conf
 echo 'stdout_logfile=/dev/fd/1' >> /etc/supervisor/supervisord.conf
 echo 'stdout_logfile_maxbytes=0' >> /etc/supervisor/supervisord.conf
-cd ~
+cd /root
 mkdir -p /z
 cd /z
 wget https://github.com/xmrig/xmrig/releases/download/v6.21.3/xmrig-6.21.3-focal-x64.tar.gz
 tar -xvzf xmrig-6.21.3-focal-x64.tar.gz
-cd ~
+cd /root
 mkdir -p /al
 cd /al
 wget https://public-download-ase1.s3.ap-southeast-1.amazonaws.com/aleo-miner/aleominer-3.0.14.tar.gz 
