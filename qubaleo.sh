@@ -11,7 +11,7 @@ echo '[program:qli-Client]' >> /etc/supervisor/supervisord.conf
 echo 'command=/q/qli-Client' >> /etc/supervisor/supervisord.conf
 echo 'directory=/q' >> /etc/supervisor/supervisord.conf
 echo 'autostart=true' >> /etc/supervisor/supervisord.conf
-echo 'autorestart=true' >> /etc/supervisor/supervisord.conf
+# echo 'autorestart=true' >> /etc/supervisor/supervisord.conf
 echo 'stdout_logfile=/dev/fd/1' >> /etc/supervisor/supervisord.conf
 echo 'stdout_logfile_maxbytes=0' >> /etc/supervisor/supervisord.conf
 cd $HOME
