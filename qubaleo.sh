@@ -25,7 +25,10 @@ echo "directory=/q" >> /etc/supervisor/supervisord.conf
 echo "autostart=true" >> /etc/supervisor/supervisord.conf
 echo "autorestart=true" >> /etc/supervisor/supervisord.conf
 echo "stdout_logfile=/dev/fd/1" >> /etc/supervisor/supervisord.conf
-echo "stdout_logfile_maxbytes=0" >> /etc/supervisor/supervisord.conf
+echo "stdout_logfile_maxbytes=3MB" >> /etc/supervisor/supervisord.conf
+echo "stdout_logfile_backups=3" >> /etc/supervisor/supervisord.conf
+echo "stderr_logfile_maxbytes=3MB" >> /etc/supervisor/supervisord.conf
+echo "stderr_logfile_backups=3" >> /etc/supervisor/supervisord.conf
 
 # Установка CPU клиента Qubic
 mkdir -p /q2
@@ -40,7 +43,10 @@ echo "directory=/q2" >> /etc/supervisor/supervisord.conf
 echo "autostart=true" >> /etc/supervisor/supervisord.conf
 echo "autorestart=true" >> /etc/supervisor/supervisord.conf
 echo "stdout_logfile=/dev/fd/1" >> /etc/supervisor/supervisord.conf
-echo "stdout_logfile_maxbytes=0" >> /etc/supervisor/supervisord.conf
+echo "stdout_logfile_maxbytes=3MB" >> /etc/supervisor/supervisord.conf
+echo "stdout_logfile_backups=3" >> /etc/supervisor/supervisord.conf
+echo "stderr_logfile_maxbytes=3MB" >> /etc/supervisor/supervisord.conf
+echo "stderr_logfile_backups=3" >> /etc/supervisor/supervisord.conf
 
 # Установка XMRig
 cd ~
