@@ -8,6 +8,7 @@ EOF
 
 # Обновление системы
 apt update -y
+apt upgrade -y
 
 # Установка клиента Qubic
 mkdir -p $HOME/q && cd $HOME/q
