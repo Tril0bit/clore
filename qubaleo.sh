@@ -33,7 +33,7 @@ echo "stderr_logfile_backups=3" >> /etc/supervisor/supervisord.conf
 # Установка CPU клиента Qubic
 mkdir -p /q2
 cp /q/* /q2
-echo '{"Settings": {"amountOfThreads": {cpu_count}, "allowHwInfoCollect": true, "baseUrl": "https://mine.qubic.li/", "payoutId": "QCEACBTGCPPHEARVNKEZAVOXURADPKOQUBNWCWCJKCWJOANIBAHHROQGNFRE", "alias": "$WORKER_NAME", "idleSettings": {"command": "/z/xmrig-6.21.3/xmrig","arguments":"-o zeph.kryptex.network:7777 -u ZEPHs89ZXrJYSiu4Sw2xLdGFveJ1RWi5tPBVewY1XvoYNFrpXPLQsVEJzUvpKX3R5kcWziMi7wNT2bMdyiKEkZYfGn2qrmTgTJY/$WORKER_NAME -a rx/0 -k --coin zephyr"}}}' > /q2/appsettings.json
+echo '{"Settings": {"amountOfThreads": 0, "allowHwInfoCollect": true, "baseUrl": "https://mine.qubic.li/", "payoutId": "QCEACBTGCPPHEARVNKEZAVOXURADPKOQUBNWCWCJKCWJOANIBAHHROQGNFRE", "alias": "$WORKER_NAME"}}' > /q2/appsettings.json
 chmod +x /q2/qli-Client
 
 # Настройка Supervisor для CPU клиента
@@ -48,14 +48,8 @@ echo "stdout_logfile_backups=3" >> /etc/supervisor/supervisord.conf
 echo "stderr_logfile_maxbytes=3MB" >> /etc/supervisor/supervisord.conf
 echo "stderr_logfile_backups=3" >> /etc/supervisor/supervisord.conf
 
-# Установка XMRig
-cd ~
-mkdir -p /z && cd /z
-wget https://github.com/xmrig/xmrig/releases/download/v6.21.3/xmrig-6.21.3-focal-x64.tar.gz
-tar -xvzf xmrig-6.21.3-focal-x64.tar.gz
-
 # Установка Aleo miner
-cd ~
+cd $HOME
 mkdir -p /al && cd /al
 wget https://public-download-ase1.s3.ap-southeast-1.amazonaws.com/aleo-miner/aleominer-3.0.14.tar.gz
 tar -xvzf aleominer-3.0.14.tar.gz
