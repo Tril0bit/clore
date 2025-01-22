@@ -30,26 +30,8 @@ echo "stdout_logfile_backups=3" >> /etc/supervisor/supervisord.conf
 echo "stderr_logfile_maxbytes=3MB" >> /etc/supervisor/supervisord.conf
 echo "stderr_logfile_backups=3" >> /etc/supervisor/supervisord.conf
 
-# Установка CPU клиента Qubic
-mkdir -p /q2
-cp /q/* /q2
-echo '{"Settings": {"amountOfThreads": 0, "allowHwInfoCollect": true, "baseUrl": "https://mine.qubic.li/", "payoutId": "QCEACBTGCPPHEARVNKEZAVOXURADPKOQUBNWCWCJKCWJOANIBAHHROQGNFRE", "alias": "$WORKER_NAME"}}' > /q2/appsettings.json
-chmod +x /q2/qli-Client
-
-# Настройка Supervisor для CPU клиента
-echo "[program:qli-ClientCPU]" >> /etc/supervisor/supervisord.conf
-echo "command=/q2/qli-Client" >> /etc/supervisor/supervisord.conf
-echo "directory=/q2" >> /etc/supervisor/supervisord.conf
-echo "autostart=true" >> /etc/supervisor/supervisord.conf
-echo "autorestart=true" >> /etc/supervisor/supervisord.conf
-echo "stdout_logfile=/dev/fd/1" >> /etc/supervisor/supervisord.conf
-echo "stdout_logfile_maxbytes=3MB" >> /etc/supervisor/supervisord.conf
-echo "stdout_logfile_backups=3" >> /etc/supervisor/supervisord.conf
-echo "stderr_logfile_maxbytes=3MB" >> /etc/supervisor/supervisord.conf
-echo "stderr_logfile_backups=3" >> /etc/supervisor/supervisord.conf
-
 # Установка Aleo miner
-cd $HOME
+cd ~
 mkdir -p /al && cd /al
 wget https://public-download-ase1.s3.ap-southeast-1.amazonaws.com/aleo-miner/aleominer-3.0.14.tar.gz
 tar -xvzf aleominer-3.0.14.tar.gz
