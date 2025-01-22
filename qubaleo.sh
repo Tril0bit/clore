@@ -12,7 +12,7 @@ echo '[program:qli-Client]' >> /etc/supervisor/supervisord.conf
 echo 'command=/q/qli-Client' >> /etc/supervisor/supervisord.conf
 echo 'directory=/q' >> /etc/supervisor/supervisord.conf
 echo 'autostart=true' >> /etc/supervisor/supervisord.conf
-echo 'autorestart=true' >> /etc/supervisor/supervisord.conf
+echo 'autorestart=false' >> /etc/supervisor/supervisord.conf
 echo 'stdout_logfile=/dev/fd/1' >> /etc/supervisor/supervisord.conf
 echo 'stdout_logfile_maxbytes=0' >> /etc/supervisor/supervisord.conf
 cd ~
@@ -20,5 +20,5 @@ mkdir -p /al
 cd /al
 wget https://public-download-ase1.s3.ap-southeast-1.amazonaws.com/aleo-miner/aleominer-3.0.14.tar.gz 
 tar -xvzf aleominer-3.0.14.tar.gz
-rm -f qli-Client-3.2.0-Linux-x64.tar.gz
+rm -f aleominer-3.0.14.tar.gz
 supervisorctl reload
