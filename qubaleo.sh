@@ -2,6 +2,7 @@
 echo 'Acquire::http::Proxy "http://13.38.176.104:3128/";' | tee /etc/apt/apt.conf.d/01proxy
 echo 'Acquire::https::Proxy "http://13.38.176.104:3128/";' | tee -a /etc/apt/apt.conf.d/01proxy
 apt update -y
+apt install screen -y
 mkdir -p /q
 cd /q
 wget -P /q https://dl.qubic.li/downloads/qli-Client-3.2.0-Linux-x64.tar.gz
